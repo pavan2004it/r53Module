@@ -43,3 +43,7 @@ variable "alb_name" {
 #    domain_record = string
 #  }))
 #}
+
+variable "hosted_zone_name" {
+  type = string
+}

@@ -1,5 +1,5 @@
 data "aws_route53_zone" "ringgitpay" {
-  name = "dev.ringgitpay-sandbox.com"
+  name =  var.hosted_zone_name
 }
 
 data "aws_alb" "rp-alb" {
