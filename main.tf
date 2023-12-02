@@ -2,10 +2,6 @@ data "aws_route53_zone" "ringgitpay" {
   name =  var.hosted_zone_name
 }
 
-data "aws_alb" "rp-alb" {
-  name = var.alb_name
-}
-
 resource "aws_route53_record" "rp-dev-alb" {
   for_each = toset(var.r53_alb_records)
   zone_id = data.aws_route53_zone.ringgitpay.id
