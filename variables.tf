@@ -47,3 +47,8 @@ variable "alb_name" {
 variable "hosted_zone_name" {
   type = string
 }
+
+variable "create_cdn_records" {
+  type = bool
+  default = true
+}

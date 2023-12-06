@@ -16,7 +16,7 @@ resource "aws_route53_record" "rp-dev-alb" {
 }
 
 resource "aws_route53_record" "rp-cdn" {
-  for_each = toset(var.r53_cdn_records)
+  for_each = var.create_cdn_records ? toset(var.r53_cdn_records) : toset([])
   zone_id = data.aws_route53_zone.ringgitpay.id
   name    = each.value
   type    = "A"
